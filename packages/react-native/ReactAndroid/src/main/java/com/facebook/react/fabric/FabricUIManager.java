@@ -1118,6 +1118,14 @@ public class FabricUIManager
     mBinding = binding;
   }
 
+  /** Sets the media features. `AppearanceModule` calls it, so styles match `useColorScheme()`. */
+  @UnstableReactNativeAPI
+  public void setMediaFeatures(boolean isDarkMode) {
+    if (mBinding != null) {
+      mBinding.setMediaFeatures(isDarkMode);
+    }
+  }
+
   /**
    * Updates the layout metrics of the root view based on the Measure specs received by parameters.
    */
